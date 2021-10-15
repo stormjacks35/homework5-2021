@@ -1,0 +1,261 @@
+/***** STARTER CODE - DO NOT CHANGE *****/
+/*Storm Jackson*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #737373 !important;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 25px 0;
+}
+
+nav li{
+  display: inline;
+  padding-right: 20px;
+}
+
+nav{
+ background-color: white;
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+footer{
+  background-color: black !important;
+  color: white;
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+
+
+/*****  End Starter Code ****/
+
+nav a{
+  color: black;
+  font-weight: bold;
+  /* Requirement 1 code here*/
+  text-decoration: none;
+}
+
+  /* Requirement 2 code here*/
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+
+
+  /* Requirement 3a code here*/
+
+  position: absolute;
+  overflow: visible;
+  top: -40px;
+}
+/* Requirement 3b code here*/
+a:focus-visible {
+  outline: none;
+}
+
+/* Requirement 4 code here*/
+.skip a:focus {
+ top: 0;
+ border: 2px solid black;
+}
+
+  /* Requirement 5 code here*/
+.container {
+  display: grid;
+  position: relative;
+  grid-template-columns : [first] 1fr [line2] 5fr 1fr [end];
+  grid-template-rows: [row1-start] auto [row1-end] auto [third line]auto [fourth line]auto auto [last line];
+  grid-row-gap: 15px;
+}
+
+/* Remainder of requirements here: */
+
+#main{
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center; /* Parallax effect */
+  background-size: cover; /* Parallax effect */
+  color: white;
+  max-height: 400px; /* Parallax effect */
+
+  /* YOUR CODE HERE; */
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
+  grid-column: 1 / span all;
+  grid-column-end: span all;
+  grid-row: 1 / span 1;
+  padding: 50px;
+}
+
+
+.about-image{
+  grid-column: 1 / span all;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row: 2/ span 1;
+  grid-column-end: span all;
+}
+
+.about{
+ grid-column: 2 / span 1;
+ grid-row: 2 / span 1;
+}
+
+.method-image{
+  grid-column: 1 / span all;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row: 3/ span 1;
+  grid-column-end: span all;
+}
+
+.method{
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+/* You need to write some of your own selectors here */
+.clients-image{
+  grid-column: 1 / span all;
+  max-height: 700px;
+  overflow: hidden;
+  grid-row: 4/ span 1;
+  grid-column-end: span all;
+  }
+
+  .clients{
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+  }
+
+  .contact-image{
+    grid-column: 1/ span all;
+    max-height: 700px;
+    overflow: hidden;
+    grid-row: 5/ span 1;
+    grid-column-end: span all;
+  }
+    .contact{
+     grid-column: 2 / span 1;
+      grid-row: 5 / span 1;
+    }
+
+
+.text-block{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  align-self: center;
+}
+  /* Your code here */
+@media screen and (min-width: 800px){
+  nav ul{
+
+    /* Your code here */
+    text-align: right;
+  }
+
+  .container{
+    display: grid;
+    position: relative;
+    grid-template-columns:[first] 50px [line2] auto 500px [line3] auto 50px [end];
+    grid-template-rows: [row1-start] 400px [row1-end] 400px [third-line]400px [fourth-line] 400px 400px[last-line];
+    grid-row-gap: 15px;
+  }
+
+  .about-image, .method, .clients-image, .contact{
+    grid-column: 2 / span 2;
+  }
+
+  .about, .method-image, .clients, .contact-image {
+    grid-column: 3 / span 2;
+  }
+
+  /*.method-image{
+    grid-column: 3 / span 2;
+  }*/
+
+  /*.method{
+    grid-column: 2 / span 2;
+  }*/
+
+  /*.clients-image{
+    grid-column: 2 / span 2;
+  }*/
+
+  /*.clients{
+    grid-column: 3 / span 2;
+  }*/
+
+  /*.contact-image{
+     grid-column: 3 / span 2;
+  }*/
+
+  /*.contact{
+    grid-column: 2 / span 2;
+  }*/
+
+}
+
+
+/** Code for prefers reduced motion **/
+/* Make no changes below this line.
+   *************************************
+   */
+@media screen and (prefers-reduced-motion: reduce){
+  /*Turn off scroll*/
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  /*Turn off transition*/
+  .skip a{
+    -webkit-transition: initial; /* sets to default setting */
+    transition: initial; /* sets to default setting */
+  }
+
+  /*Turn off parallax*/
+  header{
+    background-attachment: initial;
+  }
+}
